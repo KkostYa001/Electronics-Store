@@ -1,1 +1,308 @@
+<!DOCTYPE html>
+<html lang="uk">
 
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Електромагазин</title>
+
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+
+<body>
+
+    <header>
+        <h2>ЕЛЕКТРОМАГАЗИН</h2>
+
+        <nav>
+            <button onclick="showPage('storePage')">Магазин</button>
+            <button onclick="showPage('homePage')">Головна</button>
+            <button onclick="showPage('aboutPage')">Про нас</button>
+            <button onclick="showPage('storePage')">🛒</button>
+        </nav>
+    </header>
+
+
+    <main id="storePage" class="screen active">
+
+        <h1 class="page-title">Популярні товари</h1>
+
+        <section class="promo">
+
+            <div class="promo-text">
+
+                <span>🔥 СПЕЦІАЛЬНІ ПРОПОЗИЦІЇ</span>
+
+                <h2>Знижки на популярну техніку щотижня!</h2>
+
+                <p>Знаходь найкращі пропозиції у нашому магазині.</p>
+
+                <button onclick="showPage('homePage')">
+                    Переглянути →
+                </button>
+
+            </div>
+
+            <img src="Банер.jpg" alt="Спеціальні пропозиції">
+
+        </section>
+
+        <h2 class="section-title">Популярні товари</h2>
+
+        <div class="products">
+
+            <div class="product">
+
+                <img src="iPhone 18.jpg" alt="iPhone 18">
+
+                <h3>iPhone 18</h3>
+
+                <p class="price">24 999 ₴</p>
+
+                <button class="buy-button" onclick="alert('iPhone 18 додано до кошика!')">
+                    Купити
+                </button>
+
+            </div>
+
+
+            <div class="product">
+
+                <img src="МІКРОФОН FIFINE AM9.jpg" alt="Мікрофон FIFINE AM9">
+
+                <h3>Мікрофон FIFINE AM9</h3>
+
+                <p class="price">4 999 ₴</p>
+
+                <button class="buy-button" onclick="alert('Мікрофон додано до кошика!')">
+                    Купити
+                </button>
+
+            </div>
+
+
+            <div class="product">
+
+                <img src="МОНІТОР PHILIPS.webp" alt="Монітор PHILIPS">
+
+                <h3>Монітор PHILIPS</h3>
+
+                <p class="price">6 399 ₴</p>
+
+                <button class="buy-button" onclick="alert('Монітор додано до кошика!')">
+                    Купити
+                </button>
+
+            </div>
+
+        </div>
+
+    </main>
+
+
+
+    <main id="homePage" class="screen">
+
+        <section class="main-banner">
+
+            <div class="banner-text">
+
+                <span>СВІТ СУЧАСНИХ ТЕХНОЛОГІЙ</span>
+
+                <h1>Техніка для твого життя</h1>
+
+                <p>
+                    Обирай найкраще серед сучасних гаджетів!
+                    Смартфони, ноутбуки та навушники чекають на тебе.
+                </p>
+
+                <button onclick="showPage('storePage')">
+                    Переглянути товари →
+                </button>
+
+            </div>
+
+            <img src="Банер.jpg" alt="Сучасна техніка">
+
+        </section>
+
+
+        <h2 class="section-title">Популярні категорії</h2>
+
+        <div class="categories">
+
+            <div class="category">
+
+                <img src="iPhone 18.jpg" alt="Смартфони">
+
+                <h3>Смартфони</h3>
+
+            </div>
+
+
+            <div class="category">
+
+                <img src="images/laptop.png" alt="Ноутбуки">
+
+                <h3>Ноутбуки</h3>
+
+            </div>
+
+
+            <div class="category">
+
+                <img src="AirPods Pro 2.jpg" alt="Навушники">
+
+                <h3>Навушники</h3>
+
+            </div>
+
+        </div>
+
+
+        <h2 class="section-title">Популярні товари</h2>
+
+        <div class="products">
+
+            <div class="product">
+
+                <img src="AirPods Pro 2.jpg" alt="AirPods Pro 2">
+
+                <h3>AirPods Pro 2</h3>
+
+                <p class="price">18 999 ₴</p>
+
+                <button class="buy-button" onclick="alert('AirPods Pro 2 додано до кошика!')">
+                    Купити
+                </button>
+
+            </div>
+
+
+            <div class="product">
+
+                <img src="Ноутбук ASUS.jpg" alt="Ноутбук ASUS">
+
+                <h3>ASUS ROG Strix</h3>
+
+                <p class="price">64 999 ₴</p>
+
+                <button class="buy-button" onclick="alert('Ноутбук додано до кошика!')">
+                    Купити
+                </button>
+
+            </div>
+
+
+            <div class="product">
+
+                <img src="Годинник Samsung Galaxy Watch.jpg" alt="Годинник">
+
+                <h3>Samsung Galaxy Watch</h3>
+
+                <p class="price">14 999 ₴</p>
+
+                <button class="buy-button" onclick="alert('Годинник додано до кошика!')">
+                    Купити
+                </button>
+
+            </div>
+
+        </div>
+
+    </main>
+
+
+
+    <main id="aboutPage" class="screen">
+
+        <section class="welcome">
+
+            <span>ЛАСКАВО ПРОСИМО!</span>
+
+            <h1>
+                Технології, які роблять життя простішим
+            </h1>
+
+            <p>
+                Відкрий для себе світ сучасної електроніки.
+                Смартфони, ноутбуки, навушники та багато іншого
+                в одному місці.
+            </p>
+
+        </section>
+
+
+        <section class="hero">
+
+            <img src="Банер.jpg" alt="Сучасна техніка">
+
+        </section>
+
+
+        <div class="catalog-button">
+
+            <button onclick="showPage('storePage')">
+                Перейти до каталогу →
+            </button>
+
+        </div>
+
+
+        <h2 class="section-title">Чому обирають нас?</h2>
+
+        <div class="advantages">
+
+            <div class="advantage">
+
+                <h3>🚚 Швидка доставка</h3>
+
+                <p>Зручне отримання замовлень</p>
+
+            </div>
+
+
+            <div class="advantage">
+
+                <h3>🛡️ Гарантія якості</h3>
+
+                <p>Надійна техніка</p>
+
+            </div>
+
+
+            <div class="advantage">
+
+                <h3>🎧 Підтримка</h3>
+
+                <p>Допомога покупцям</p>
+
+            </div>
+
+
+            <div class="advantage">
+
+                <h3>🏷️ Вигідні ціни</h3>
+
+                <p>Цікаві пропозиції</p>
+
+            </div>
+
+        </div>
+
+    </main>
+
+
+
+    <footer>
+
+        <h3>ЕЛЕКТРОМАГАЗИН</h3>
+
+        <p>Твій світ сучасних технологій</p>
+
+    </footer>
+
+</body>
+
+</html>

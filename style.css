@@ -1,1 +1,568 @@
 
+/* ================================= */
+/* ЗАГАЛЬНІ НАЛАШТУВАННЯ */
+/* ================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #edf2ff;
+    color: #10245b;
+    padding: 20px;
+}
+
+button {
+    cursor: pointer;
+    font-family: Arial, sans-serif;
+}
+
+
+/* ================================= */
+/* ШАПКА САЙТУ */
+/* ================================= */
+
+header {
+    max-width: 1200px;
+    margin: 0 auto 20px;
+    padding: 20px 25px;
+    background: white;
+    border-radius: 15px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    box-shadow: 0 3px 15px rgba(20, 50, 100, 0.08);
+}
+
+header h2 {
+    font-size: 22px;
+    font-weight: bold;
+}
+
+nav {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+nav button {
+    background: transparent;
+    border: none;
+    color: #10245b;
+    font-size: 14px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+nav button:hover {
+    color: #1559f5;
+}
+
+
+/* ================================= */
+/* ПЕРЕМИКАННЯ СТОРІНОК */
+/* ================================= */
+
+.screen {
+    display: none;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.screen.active {
+    display: block;
+}
+
+
+/* ================================= */
+/* ЗАГОЛОВКИ */
+/* ================================= */
+
+.page-title {
+    font-size: 28px;
+    margin: 25px 0;
+}
+
+.section-title {
+    font-size: 24px;
+    margin: 30px 0 18px;
+}
+
+
+/* ================================= */
+/* БАНЕР СПЕЦІАЛЬНИХ ПРОПОЗИЦІЙ */
+/* ================================= */
+
+.promo {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 25px;
+
+    background: linear-gradient(110deg, #dceaff, #a7caff);
+    padding: 25px;
+    border-radius: 18px;
+    margin: 20px 0;
+
+    overflow: hidden;
+}
+
+.promo-text {
+    flex: 1;
+}
+
+.promo span {
+    color: #1559f5;
+    font-size: 13px;
+    font-weight: bold;
+}
+
+.promo h2 {
+    font-size: 25px;
+    margin: 12px 0;
+}
+
+.promo p {
+    font-size: 14px;
+    color: #52658d;
+    margin-bottom: 15px;
+}
+
+.promo img {
+    width: 42%;
+    height: 180px;
+    object-fit: contain;
+    border-radius: 12px;
+}
+
+.promo button {
+    background: #1559f5;
+    color: white;
+    border: none;
+    border-radius: 9px;
+    padding: 12px 20px;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.promo button:hover {
+    background: #0645d5;
+}
+
+
+/* ================================= */
+/* ГОЛОВНИЙ БАНЕР */
+/* ================================= */
+
+.main-banner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 30px;
+
+    background: #dce9ff;
+    padding: 35px;
+    border-radius: 18px;
+    overflow: hidden;
+}
+
+.banner-text {
+    flex: 1;
+}
+
+.banner-text span {
+    color: #1559f5;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.banner-text h1 {
+    font-size: 38px;
+    margin: 15px 0;
+}
+
+.banner-text p {
+    font-size: 16px;
+    line-height: 1.6;
+    color: #52658d;
+    margin-bottom: 20px;
+}
+
+.main-banner img {
+    width: 45%;
+    height: 280px;
+    object-fit: contain;
+}
+
+.main-banner button {
+    background: #1559f5;
+    color: white;
+    border: none;
+    border-radius: 9px;
+    padding: 13px 22px;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.main-banner button:hover {
+    background: #0645d5;
+}
+
+
+/* ================================= */
+/* КАТЕГОРІЇ */
+/* ================================= */
+
+.categories {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.category {
+    background: white;
+    border: 1px solid #e1e9fb;
+    border-radius: 15px;
+    padding: 20px;
+    text-align: center;
+
+    box-shadow: 0 3px 12px rgba(20, 50, 100, 0.06);
+    transition: 0.3s;
+}
+
+.category:hover {
+    transform: translateY(-4px);
+}
+
+.category img {
+    width: 100%;
+    height: 150px;
+    object-fit: contain;
+    margin-bottom: 12px;
+}
+
+.category h3 {
+    font-size: 17px;
+}
+
+
+/* ================================= */
+/* ТОВАРИ */
+/* ================================= */
+
+.products {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.product {
+    background: white;
+    border: 1px solid #e1e9fb;
+    border-radius: 15px;
+    padding: 18px;
+    text-align: center;
+
+    box-shadow: 0 3px 12px rgba(20, 50, 100, 0.06);
+    transition: 0.3s;
+}
+
+.product:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 7px 18px rgba(20, 50, 100, 0.12);
+}
+
+
+/* ФОТО ТОВАРІВ */
+
+.product img {
+    width: 100%;
+    height: 200px;
+    object-fit: contain;
+    display: block;
+    margin-bottom: 15px;
+}
+
+
+/* НАЗВА ТОВАРУ */
+
+.product h3 {
+    font-size: 17px;
+    margin-bottom: 10px;
+}
+
+
+/* ЦІНА */
+
+.product .price {
+    color: #1559f5;
+    font-size: 21px;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+
+/* КНОПКА КУПИТИ */
+
+.buy-button {
+    width: 100%;
+    padding: 12px;
+
+    background: #1559f5;
+    color: white;
+
+    border: none;
+    border-radius: 9px;
+
+    font-size: 14px;
+    font-weight: bold;
+
+    transition: 0.3s;
+}
+
+.buy-button:hover {
+    background: #0645d5;
+}
+
+
+/* ================================= */
+/* СТОРІНКА ПРО НАС */
+/* ================================= */
+
+.welcome {
+    padding: 25px 5px 20px;
+}
+
+.welcome span {
+    display: inline-block;
+    background: #dce9ff;
+    color: #1559f5;
+
+    padding: 8px 13px;
+    border-radius: 20px;
+
+    font-size: 12px;
+    margin-bottom: 15px;
+}
+
+.welcome h1 {
+    font-size: 32px;
+    margin-bottom: 15px;
+}
+
+.welcome p {
+    font-size: 15px;
+    line-height: 1.7;
+    color: #63718c;
+}
+
+
+/* ГОЛОВНЕ ФОТО */
+
+.hero img {
+    display: block;
+    width: 100%;
+    height: 350px;
+
+    object-fit: cover;
+    border-radius: 15px;
+}
+
+
+/* КНОПКА КАТАЛОГУ */
+
+.catalog-button {
+    margin: 15px 0 25px;
+}
+
+.catalog-button button {
+    width: 100%;
+
+    background: #1559f5;
+    color: white;
+
+    border: none;
+    border-radius: 9px;
+
+    padding: 14px;
+    font-size: 15px;
+    font-weight: bold;
+}
+
+.catalog-button button:hover {
+    background: #0645d5;
+}
+
+
+/* ================================= */
+/* ПЕРЕВАГИ МАГАЗИНУ */
+/* ================================= */
+
+.advantages {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+    margin-bottom: 30px;
+}
+
+.advantage {
+    background: #f0f3ff;
+    border-radius: 13px;
+    padding: 25px 15px;
+    text-align: center;
+}
+
+.advantage h3 {
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+.advantage p {
+    color: #8793ad;
+    font-size: 13px;
+}
+
+
+/* ================================= */
+/* ФУТЕР */
+/* ================================= */
+
+footer {
+    max-width: 1200px;
+    margin: 25px auto 0;
+
+    background: #10245b;
+    color: white;
+
+    text-align: center;
+    padding: 25px;
+
+    border-radius: 12px;
+}
+
+footer h3 {
+    font-size: 18px;
+    margin-bottom: 8px;
+}
+
+footer p {
+    color: #cbd8f5;
+    font-size: 13px;
+}
+
+
+/* ================================= */
+/* АДАПТАЦІЯ ДЛЯ ТЕЛЕФОНІВ */
+/* ================================= */
+
+@media (max-width: 650px) {
+
+    body {
+        padding: 8px;
+    }
+
+    header {
+        flex-direction: column;
+        gap: 15px;
+        padding: 16px;
+    }
+
+    header h2 {
+        font-size: 20px;
+    }
+
+    nav {
+        gap: 12px;
+    }
+
+    nav button {
+        font-size: 12px;
+    }
+
+    .promo {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .promo img {
+        width: 100%;
+        height: 180px;
+    }
+
+    .main-banner {
+        flex-direction: column;
+        padding: 20px;
+    }
+
+    .banner-text h1 {
+        font-size: 28px;
+    }
+
+    .main-banner img {
+        width: 100%;
+        height: 220px;
+    }
+
+    .categories,
+    .products {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 12px;
+    }
+
+    .product {
+        padding: 12px;
+    }
+
+    .product img {
+        height: 140px;
+    }
+
+    .product h3 {
+        font-size: 14px;
+    }
+
+    .product .price {
+        font-size: 17px;
+    }
+
+    .welcome h1 {
+        font-size: 25px;
+    }
+
+    .hero img {
+        height: 220px;
+    }
+
+    .advantages {
+        gap: 10px;
+    }
+
+    .advantage {
+        padding: 18px 8px;
+    }
+}
+
+
+/* ДУЖЕ МАЛЕНЬКІ ЕКРАНИ */
+
+@media (max-width: 380px) {
+
+    nav {
+        gap: 8px;
+    }
+
+    nav button {
+        font-size: 10px;
+    }
+
+    .categories,
+    .products {
+        grid-template-columns: 1fr;
+    }
+}
