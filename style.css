@@ -14,6 +14,8 @@ body {
     background: #edf2ff;
     color: #10245b;
     padding: 20px;
+    width: 100%;
+    min-width: 320px;
 }
 
 button {
@@ -62,6 +64,32 @@ nav button {
 
 nav button:hover {
     color: #1559f5;
+}
+
+
+/* ================================= */
+/* КНОПКА КОШИКА В МЕНЮ */
+/* ================================= */
+
+.cart-button {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+#cartCount {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+
+    min-width: 19px;
+    height: 19px;
+    padding: 0 5px;
+
+    background: #1559f5;
+    color: white;
+    border-radius: 50%;
+    font-size: 11px;
 }
 
 
@@ -258,8 +286,15 @@ nav button:hover {
 
 .products {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
     gap: 20px;
+}
+
+.store-products {
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.home-products {
+    grid-template-columns: repeat(4, 1fr);
 }
 
 .product {
@@ -271,6 +306,9 @@ nav button:hover {
 
     box-shadow: 0 3px 12px rgba(20, 50, 100, 0.06);
     transition: 0.3s;
+
+    display: flex;
+    flex-direction: column;
 }
 
 .product:hover {
@@ -312,6 +350,7 @@ nav button:hover {
 
 .buy-button {
     width: 100%;
+    margin-top: auto;
     padding: 12px;
 
     background: #1559f5;
@@ -416,6 +455,17 @@ nav button:hover {
     border-radius: 13px;
     padding: 25px 15px;
     text-align: center;
+    transition: 0.3s;
+}
+
+.advantage:hover {
+    background: #e5edff;
+    transform: translateY(-3px);
+}
+
+.benefit-icon {
+    font-size: 22px;
+    margin-bottom: 8px;
 }
 
 .advantage h3 {
@@ -426,6 +476,164 @@ nav button:hover {
 .advantage p {
     color: #8793ad;
     font-size: 13px;
+}
+
+
+/* ================================= */
+/* СТОРІНКА КОШИКА */
+/* ================================= */
+
+.cart-items {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.cart-item {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+
+    background: white;
+    padding: 18px;
+
+    border: 1px solid #e1e9fb;
+    border-radius: 15px;
+
+    box-shadow: 0 3px 12px rgba(20, 50, 100, 0.06);
+}
+
+.cart-item img {
+    width: 110px;
+    height: 110px;
+    object-fit: contain;
+}
+
+.cart-item-info {
+    flex: 1;
+}
+
+.cart-item-info h3 {
+    font-size: 17px;
+    margin-bottom: 10px;
+}
+
+.cart-item-price {
+    color: #1559f5;
+    font-weight: bold;
+    margin-bottom: 12px;
+}
+
+.quantity-controls {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.quantity-controls button {
+    width: 30px;
+    height: 30px;
+
+    background: #eaf0ff;
+    color: #1559f5;
+
+    border: none;
+    border-radius: 7px;
+
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.quantity-controls span {
+    font-weight: bold;
+}
+
+.cart-item-right {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 15px;
+}
+
+.cart-item-right strong {
+    font-size: 17px;
+    color: #10245b;
+}
+
+.remove-button {
+    background: #ffecec;
+    color: #e53939;
+
+    border: none;
+    border-radius: 7px;
+
+    padding: 8px 12px;
+    font-size: 12px;
+}
+
+
+/* ЗАГАЛЬНА СУМА */
+
+.cart-summary {
+    background: white;
+    border-radius: 15px;
+    padding: 22px;
+    margin-top: 20px;
+
+    box-shadow: 0 3px 12px rgba(20, 50, 100, 0.06);
+}
+
+.cart-summary h2 {
+    font-size: 22px;
+    margin-bottom: 18px;
+}
+
+.cart-summary h2 span {
+    color: #1559f5;
+}
+
+.clear-cart {
+    background: #1559f5;
+    color: white;
+
+    border: none;
+    border-radius: 9px;
+
+    padding: 12px 20px;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.clear-cart:hover {
+    background: #0645d5;
+}
+
+
+/* ПОРОЖНІЙ КОШИК */
+
+.empty-cart {
+    background: white;
+    text-align: center;
+    padding: 60px 20px;
+    border-radius: 15px;
+}
+
+.empty-cart h2 {
+    font-size: 23px;
+    margin-bottom: 12px;
+}
+
+.empty-cart p {
+    color: #8793ad;
+    margin-bottom: 20px;
+}
+
+.empty-cart button {
+    background: #1559f5;
+    color: white;
+    border: none;
+    border-radius: 9px;
+    padding: 12px 20px;
 }
 
 
@@ -510,9 +718,13 @@ footer p {
     }
 
     .categories,
-    .products {
+    .home-products {
         grid-template-columns: repeat(2, 1fr);
         gap: 12px;
+    }
+
+    .store-products {
+        grid-template-columns: repeat(2, 1fr);
     }
 
     .product {
@@ -546,6 +758,24 @@ footer p {
     .advantage {
         padding: 18px 8px;
     }
+
+    .cart-item {
+        gap: 10px;
+        padding: 12px;
+    }
+
+    .cart-item img {
+        width: 75px;
+        height: 75px;
+    }
+
+    .cart-item-info h3 {
+        font-size: 13px;
+    }
+
+    .cart-item-right strong {
+        font-size: 13px;
+    }
 }
 
 
@@ -565,4 +795,12 @@ footer p {
     .products {
         grid-template-columns: 1fr;
     }
+}
+header,
+.screen,
+footer {
+    width: 100%;
+    max-width: 1400px;
+    margin-left: auto;
+    margin-right: auto;
 }

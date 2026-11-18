@@ -1,9 +1,11 @@
+
 <!DOCTYPE html>
 <html lang="uk">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>Електромагазин</title>
 
     <link rel="stylesheet" href="style.css">
@@ -12,22 +14,33 @@
 
 <body>
 
+    <!-- ШАПКА САЙТУ -->
     <header>
+
         <h2>ЕЛЕКТРОМАГАЗИН</h2>
 
         <nav>
             <button onclick="showPage('storePage')">Магазин</button>
             <button onclick="showPage('homePage')">Головна</button>
             <button onclick="showPage('aboutPage')">Про нас</button>
-            <button onclick="showPage('storePage')">🛒</button>
+
+            <button class="cart-button" onclick="showPage('cartPage')">
+                🛒 <span id="cartCount">0</span>
+            </button>
         </nav>
+
     </header>
 
+
+    <!-- ================================= -->
+    <!-- 1. МАГАЗИН -->
+    <!-- ================================= -->
 
     <main id="storePage" class="screen active">
 
         <h1 class="page-title">Популярні товари</h1>
 
+        <!-- СПЕЦІАЛЬНІ ПРОПОЗИЦІЇ -->
         <section class="promo">
 
             <div class="promo-text">
@@ -48,25 +61,28 @@
 
         </section>
 
+
         <h2 class="section-title">Популярні товари</h2>
 
-        <div class="products">
+        <div class="products store-products">
 
+            <!-- IPHONE -->
             <div class="product">
 
-                <img src="iPhone 18.jpg" alt="iPhone 18">
+                <img src="айфон 18.jpg" alt="iPhone 18">
 
                 <h3>iPhone 18</h3>
 
                 <p class="price">24 999 ₴</p>
 
-                <button class="buy-button" onclick="alert('iPhone 18 додано до кошика!')">
+                <button class="buy-button" onclick="addToCart('iphone18')">
                     Купити
                 </button>
 
             </div>
 
 
+            <!-- МІКРОФОН -->
             <div class="product">
 
                 <img src="МІКРОФОН FIFINE AM9.jpg" alt="Мікрофон FIFINE AM9">
@@ -75,13 +91,14 @@
 
                 <p class="price">4 999 ₴</p>
 
-                <button class="buy-button" onclick="alert('Мікрофон додано до кошика!')">
+                <button class="buy-button" onclick="addToCart('microphone')">
                     Купити
                 </button>
 
             </div>
 
 
+            <!-- МОНІТОР -->
             <div class="product">
 
                 <img src="МОНІТОР PHILIPS.webp" alt="Монітор PHILIPS">
@@ -90,7 +107,7 @@
 
                 <p class="price">6 399 ₴</p>
 
-                <button class="buy-button" onclick="alert('Монітор додано до кошика!')">
+                <button class="buy-button" onclick="addToCart('monitor')">
                     Купити
                 </button>
 
@@ -102,8 +119,13 @@
 
 
 
+    <!-- ================================= -->
+    <!-- 2. ГОЛОВНА -->
+    <!-- ================================= -->
+
     <main id="homePage" class="screen">
 
+        <!-- ГОЛОВНИЙ БАНЕР -->
         <section class="main-banner">
 
             <div class="banner-text">
@@ -128,13 +150,14 @@
         </section>
 
 
+        <!-- ПОПУЛЯРНІ КАТЕГОРІЇ -->
         <h2 class="section-title">Популярні категорії</h2>
 
         <div class="categories">
 
             <div class="category">
 
-                <img src="iPhone 18.jpg" alt="Смартфони">
+                <img src="айфон 18.jpg" alt="Смартфони">
 
                 <h3>Смартфони</h3>
 
@@ -143,7 +166,7 @@
 
             <div class="category">
 
-                <img src="images/laptop.png" alt="Ноутбуки">
+                <img src="ноут.jpg" alt="Ноутбуки">
 
                 <h3>Ноутбуки</h3>
 
@@ -154,17 +177,19 @@
 
                 <img src="AirPods Pro 2.jpg" alt="Навушники">
 
-                <h3>Навушники</h3>
+                <h3>Аксесуари</h3>
 
             </div>
 
         </div>
 
 
+        <!-- ПОПУЛЯРНІ ТОВАРИ -->
         <h2 class="section-title">Популярні товари</h2>
 
-        <div class="products">
+        <div class="products home-products">
 
+            <!-- AIRPODS -->
             <div class="product">
 
                 <img src="AirPods Pro 2.jpg" alt="AirPods Pro 2">
@@ -173,37 +198,55 @@
 
                 <p class="price">18 999 ₴</p>
 
-                <button class="buy-button" onclick="alert('AirPods Pro 2 додано до кошика!')">
+                <button class="buy-button" onclick="addToCart('airpods')">
                     Купити
                 </button>
 
             </div>
 
 
+            <!-- НОУТБУК -->
             <div class="product">
 
-                <img src="Ноутбук ASUS.jpg" alt="Ноутбук ASUS">
+                <img src="images.jpg" alt="Ноутбук ASUS">
 
                 <h3>ASUS ROG Strix</h3>
 
                 <p class="price">64 999 ₴</p>
 
-                <button class="buy-button" onclick="alert('Ноутбук додано до кошика!')">
+                <button class="buy-button" onclick="addToCart('asus')">
                     Купити
                 </button>
 
             </div>
 
 
+            <!-- ГОДИННИК -->
             <div class="product">
 
-                <img src="Годинник Samsung Galaxy Watch.jpg" alt="Годинник">
+                <img src="годиник.jpg" alt="Годинник">
 
                 <h3>Samsung Galaxy Watch</h3>
 
                 <p class="price">14 999 ₴</p>
 
-                <button class="buy-button" onclick="alert('Годинник додано до кошика!')">
+                <button class="buy-button" onclick="addToCart('watch')">
+                    Купити
+                </button>
+
+            </div>
+
+
+            <!-- PLAYSTATION -->
+            <div class="product">
+
+                <img src="PlayStation 5.jpg" alt="PlayStation 5">
+
+                <h3>PlayStation 5</h3>
+
+                <p class="price">24 999 ₴</p>
+
+                <button class="buy-button" onclick="addToCart('ps5')">
                     Купити
                 </button>
 
@@ -215,15 +258,18 @@
 
 
 
+    <!-- ================================= -->
+    <!-- 3. ПРО НАС -->
+    <!-- ================================= -->
+
     <main id="aboutPage" class="screen">
 
+        <!-- ПРИВІТАННЯ -->
         <section class="welcome">
 
             <span>ЛАСКАВО ПРОСИМО!</span>
 
-            <h1>
-                Технології, які роблять життя простішим
-            </h1>
+            <h1>Технології, які роблять життя простішим</h1>
 
             <p>
                 Відкрий для себе світ сучасної електроніки.
@@ -234,6 +280,7 @@
         </section>
 
 
+        <!-- ГОЛОВНЕ ФОТО -->
         <section class="hero">
 
             <img src="Банер.jpg" alt="Сучасна техніка">
@@ -241,6 +288,7 @@
         </section>
 
 
+        <!-- КНОПКА КАТАЛОГУ -->
         <div class="catalog-button">
 
             <button onclick="showPage('storePage')">
@@ -250,44 +298,62 @@
         </div>
 
 
+        <!-- ПЕРЕВАГИ -->
         <h2 class="section-title">Чому обирають нас?</h2>
 
         <div class="advantages">
 
             <div class="advantage">
-
-                <h3>🚚 Швидка доставка</h3>
-
+                <div class="benefit-icon">🚚</div>
+                <h3>Швидка доставка</h3>
                 <p>Зручне отримання замовлень</p>
-
             </div>
 
-
             <div class="advantage">
-
-                <h3>🛡️ Гарантія якості</h3>
-
+                <div class="benefit-icon">🛡️</div>
+                <h3>Гарантія якості</h3>
                 <p>Надійна техніка</p>
-
             </div>
 
-
             <div class="advantage">
-
-                <h3>🎧 Підтримка</h3>
-
+                <div class="benefit-icon">🎧</div>
+                <h3>Підтримка</h3>
                 <p>Допомога покупцям</p>
-
             </div>
-
 
             <div class="advantage">
-
-                <h3>🏷️ Вигідні ціни</h3>
-
+                <div class="benefit-icon">🏷️</div>
+                <h3>Вигідні ціни</h3>
                 <p>Цікаві пропозиції</p>
-
             </div>
+
+        </div>
+
+    </main>
+
+
+
+    <!-- ================================= -->
+    <!-- 4. КОШИК -->
+    <!-- ================================= -->
+
+    <main id="cartPage" class="screen">
+
+        <h1 class="page-title">Мій кошик 🛒</h1>
+
+        <div id="cartItems" class="cart-items">
+        </div>
+
+        <div id="cartSummary" class="cart-summary">
+
+            <h2>
+                До сплати:
+                <span id="cartTotal">0 ₴</span>
+            </h2>
+
+            <button class="clear-cart" onclick="clearCart()">
+                Очистити кошик
+            </button>
 
         </div>
 
@@ -304,5 +370,4 @@
     </footer>
 
 </body>
-
 </html>
